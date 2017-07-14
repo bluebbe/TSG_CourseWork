@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vending Machine</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="text-center">Vending Machine</h1>
+        <hr />
+        <div class="row">
+           <div class="col-md-8">
+               <div class="container">
+                   <div class="col-md-8">
+                        <div class="row" id="itemCollection">
+                            
+                       </div>
+                   </div>
+               </div>
+           </div> 
+            
+            <div class="col-md-4  text-center">
+                <div class="row">
+           
+                    <form class="form-horizontal" role="form" id="money">
+                        <div class="form-group">
+                            <h2>Total $ In</h2>
+                            <input type="text" id ="money-insert" class="text-center" style="font-size:30px" disabled/>
+                                
+                           
+                        </div>
+                        <br />
+                        <div class="form-group">
+                          
+                           
+                            <input id="dollar"  type="button" class="btn btn-default" value="Add Dollar" />
+                            <input id="quarter" type="button" class="btn btn-default" value="Add Quarter" />
+                           
+                        </div>
+                        <div class="form-group">
+
+                            <input id="dime" type="button" class="btn btn-default" value="Add Dime" />
+
+                            <input id="nickel" type="button"  class="btn btn-default" value="Add Nickel" />
+                        </div>
+
+                       
+
+                    </form>
+                    <hr />
+                </div>
+                <div class="row">
+                    <form class="form-horizontal" role="form" id="purchase">
+                        <div class="form-group">
+                            <h2>Messages</h2>
+                            <input type="text" id="purchase-message" class="text-center" style="font-size:30px" disabled />
+                        </div>
+                        <br />
+                        <label class="col-md-2" style="font-size:30px">Item:</label>
+                            <div class="form-group">
+                                
+                                <input id="purchase-item-message" class="col-md-offset-3 col-md-6 text-center" style="font-size:30px" disabled/>
+                            </div>
+                      
+                        <div>
+                            <input id="makePurchase" type="button" class="btn btn-default" value="Make Purchase" />
+                        </div>
+                    </form>
+                    <hr />
+                </div>
+                <div class="row">
+                    <form class="form-horizontal" role="form" id="change">
+                      
+                        <div class="text-center">
+                            <h2>Change</h2>
+                            <input type="text" id="money-returned" class="text-center" style="font-size:20px;height:30px;width:369px" disabled />
+                        </div>
+                        <br />
+                        <div>
+                            <input id="change-returned"type="button" class="btn btn-default" value="Change Return" />
+                        </div>
+                      
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+     </div>
+
+
+
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/home.js"></script>
+    <script type="text/template" id="tmpl">
+        <div  class="col-md-4" >
+            <button id="{{ItemId}}" type="button" class="btn btn-lg btn-primary btn-block">
+                
+                <div class="item text-left">{{Number}}</div>
+
+                    {{Name}}
+                    <br />
+                    <br />
+                    {{Price}}
+                    <br />
+                    <br />
+                    <br />
+                    Quantity Left: {{Quantity}}
+
+                
+            </button>
+        </div>
+    </script>
+</body>
+</html>

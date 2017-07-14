@@ -1,0 +1,37 @@
+﻿@model Exercises.Models.ViewModels.StudentVM
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-3">
+        @Html.Partial("StudentNav")
+    </div>
+    <div class="col-xs-12 col-sm-9">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Delete Student</h3>
+                <div class="row">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(m => m.Student.StudentId)
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">Personal Details</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <p>Are you sure that you wish to delete <strong>@Model.Student.FirstName @Model.Student.LastName</strong></p>
+                                        
+                                    </div>
+                                    <button class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
